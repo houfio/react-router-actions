@@ -1,0 +1,30 @@
+{
+  "name": "@houfio/actions",
+  "version": "0.0.0",
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
+  "exports": {
+    ".": "./dist/index.mjs",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test": "vitest",
+    "build": "tsdown",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "@vitest/coverage-v8": "^3.1.4",
+    "arktype": "^2.1.20",
+    "tsdown": "^0.12.3",
+    "typescript": "^5.8.3",
+    "vitest": "^3.1.4"
+  },
+  "overrides": {
+    "rolldown": "1.0.0-beta.9-commit.d91dfb5",
+    "vite": "npm:rolldown-vite@latest"
+  }
+}
