@@ -1,6 +1,10 @@
 {
   "name": "@houfio/actions",
   "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/houfio/react-router-actions.git"
+  },
   "main": "./dist/index.mjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.mts",
