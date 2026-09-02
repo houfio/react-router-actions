@@ -1,6 +1,6 @@
 import type { StandardSchemaV1 } from './standard-schema.ts';
-import { ValidationError } from './validation-error.ts';
 import type { Action } from './types.ts';
+import { ValidationError } from './validation-error.ts';
 
 export function intent<N extends string, T extends object, S extends StandardSchemaV1>(
   name: N,

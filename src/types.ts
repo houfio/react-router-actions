@@ -5,7 +5,9 @@ export type Action<N extends string, T extends object, E> = {
   handle: (data: ParsedFormData) => Promise<ActionResult<T, E>>;
 };
 export type Actions<A extends Action<string, object, unknown>[], E> = {
-  [K in keyof A]: A[K] extends Action<infer N, infer T, unknown> ? { action: N } & ActionResult<T, E> : never;
+  [K in keyof A]: A[K] extends Action<infer N, infer T, unknown>
+    ? { action: N } & ActionResult<T, E>
+    : never;
 };
 
 export type ActionResult<T extends object, E> = ActionSuccess<T> | ActionFailure<E>;

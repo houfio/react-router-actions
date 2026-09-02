@@ -1,6 +1,6 @@
+import { type } from 'arktype';
 import { describe, expect, it, vi } from 'vitest';
 import { intent } from './intent.ts';
-import { type } from 'arktype';
 import { ValidationError } from './validation-error.ts';
 
 describe('intent', () => {

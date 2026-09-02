@@ -1,5 +1,5 @@
-import type { Action, Actions, ParsedFormData } from './types.ts';
 import { parseFormData } from './parse-form-data.ts';
+import type { Action, Actions, ParsedFormData } from './types.ts';
 
 export type ActionOptions<E> = {
   key: string;
@@ -8,7 +8,10 @@ export type ActionOptions<E> = {
 };
 
 export function createActions<E>(options: ActionOptions<E>) {
-  return async <const A extends Action<string, object, unknown>[]>(request: Request, actions: A) => {
+  return async <const A extends Action<string, object, unknown>[]>(
+    request: Request,
+    actions: A
+  ) => {
     const data = await request.formData();
     const intent = data.get(options.key);
     const action = actions.find((a) => a.name === intent);

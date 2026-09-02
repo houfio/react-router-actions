@@ -1,29 +1,20 @@
 {
   "compilerOptions": {
     "target": "esnext",
-    "lib": [
-      "es2023",
-      "dom",
-      "dom.iterable"
-    ],
+    "lib": ["es2023"],
     "moduleDetection": "force",
-    "module": "preserve",
-    "moduleResolution": "bundler",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
     "resolveJsonModule": true,
-    "types": [
-      "node"
-    ],
+    "types": ["node"],
     "strict": true,
     "noUnusedLocals": true,
     "declaration": true,
+    "noEmit": true,
+    "allowImportingTsExtensions": true,
     "esModuleInterop": true,
     "isolatedModules": true,
     "verbatimModuleSyntax": true,
-    "skipLibCheck": true,
-    "allowImportingTsExtensions": true
-  },
-  "include": [
-    "src",
-    "tests"
-  ]
+    "skipLibCheck": true
+  }
 }

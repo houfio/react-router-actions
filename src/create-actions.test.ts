@@ -1,7 +1,7 @@
+import { type } from 'arktype';
 import { describe, expect, it, vi } from 'vitest';
 import { type ActionOptions, createActions } from './create-actions.ts';
 import { intent } from './intent.ts';
-import { type } from 'arktype';
 import { ValidationError } from './validation-error.ts';
 
 function createRequest(data: FormData, intent?: string) {
@@ -40,7 +40,9 @@ describe('createActions', () => {
       success: true,
       data: { value: true }
     });
-    await expect(actions(createRequest(new FormData(), 'test'), intents)).rejects.toThrow(ValidationError);
+    await expect(actions(createRequest(new FormData(), 'test'), intents)).rejects.toThrow(
+      ValidationError
+    );
     await expect(actions(createRequest(new FormData(), 'test 2'), intents)).resolves.toEqual({
       action: 'test 2',
       success: true,
@@ -52,7 +54,9 @@ describe('createActions', () => {
   it('throws when no intent is specified', async () => {
     const { actions, intents } = createTestActions({ key: 'intent' });
 
-    await expect(actions(createRequest(new FormData()), intents)).rejects.toThrow(new Error('Invalid intent: `null`'));
+    await expect(actions(createRequest(new FormData()), intents)).rejects.toThrow(
+      new Error('Invalid intent: `null`')
+    );
   });
 
   it('calls the custom parseFormData function', async () => {
